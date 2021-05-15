@@ -17,15 +17,11 @@ import java.util.Random;
    choice and evaluating the two choices, this class also keeps track of the user and computer
    scores, the number of wins, and the total number of rounds that have been played. In the case
    of a tie, neither score is updated, but the number of rounds is incremented.
-   
-   NOTE: Do not modify any of the code that is provided in the starter project. Additional instance variables and methods 
-   are not required to make the program work correctly, but you may add them if you wish as long as
-   you fulfill the project requirements.
-   
+     
 */
 public class StickWaterFireGame {
 
-   // TODO 1: Declare private instance variables here:
+   
    private Random rand;
    private int playerScore;
    private int compScore;
@@ -41,8 +37,7 @@ public class StickWaterFireGame {
    *  rounds, player and computer scores will be 0, the playerWins and isTie
    *  variables should be set to false.
    */ 
-   public StickWaterFireGame() {
-   // TODO 2: Implement this method.
+   public StickWaterFireGame() {   
       rand = new Random();
       playerScore = 0;
       compScore = 0;
@@ -58,8 +53,7 @@ public class StickWaterFireGame {
    *  rounds, player and computer scores will be 0, the playerWins and isTie
    *  variables should be set to false.
    */    
-   public StickWaterFireGame(int seed) {
-   // TODO 3: Implement this method.
+   public StickWaterFireGame(int seed) {   
       rand = new Random(8);
       playerScore = 0;
       compScore = 0;
@@ -72,9 +66,8 @@ public class StickWaterFireGame {
    *  either "S", "W", or "F", false otherwise.
    *  Note that the input can be upper or lower case.
    */ 
-   public boolean isValidInput(String inputStr) {
+   public boolean isValidInput(String inputStr) {  
    
-   // TODO 4: Implement this method.
       if(inputStr.equalsIgnoreCase("s") || inputStr.equalsIgnoreCase("w") || inputStr.equalsIgnoreCase("f")){
          return true;
       }
@@ -88,7 +81,7 @@ public class StickWaterFireGame {
    *  according to those rules.
    */
    public void playRound(String playerChoice) {
-   // TODO 12: Implement this method.
+   
       computerChoice = getRandomChoice();
       if(isValidInput(playerChoice)){
          if(computerChoice.equalsIgnoreCase(playerChoice)){ 
@@ -135,13 +128,13 @@ public class StickWaterFireGame {
     
    // Returns the choice of the computer for the most recent round of play
    public String getComputerChoice(){
-   // TODO 5: Implement this method.
+   
       return computerChoice;
    }
 
    // Returns true if the player has won the last round, false otherwise.    
    public boolean playerWins(){
-   // TODO 6: Implement this method.
+   
       if(playerWins == true) 
          return true;
       else 
@@ -150,25 +143,25 @@ public class StickWaterFireGame {
    
    // Returns the player's cumulative score.    
    public int getPlayerScore(){
-   // TODO 7: Implement this method.
+   
       return playerScore;
    }
    
    // Returns the computer's cumulative score.   
    public int getComputerScore(){
-   // TODO 8: Implement this method.
+   
       return compScore;
    }
    
    // Returns the total nuber of rounds played.   
    public int getNumRounds(){
-   // TODO 9: Implement this method.
+   
       return numRounds;
    }
 
    // Returns true if the player and computer have the same score on the last round, false otherwise.    
    public boolean isTie(){
-   // TODO 10: Implement this method.
+   
       if(playerScore == compScore) 
          return true;
       else 
@@ -180,7 +173,7 @@ public class StickWaterFireGame {
    *  This method is called by the playRound method.
    */
    private String getRandomChoice() {
-   // TODO 11: Implement this method.
+   
       int choice = rand.nextInt(3);
       if(choice == 0) computerChoice = "S";
       else if(choice == 1) computerChoice = "W";
